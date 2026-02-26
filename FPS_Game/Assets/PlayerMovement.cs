@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float mouseSens;
     public float maxPitch;
+    public float zoom;
+    public float zoomSpeed;
 
     private float camPitch;
 
@@ -25,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -84,5 +89,19 @@ public class PlayerMovement : MonoBehaviour
         camPitch += -Input.GetAxis("Mouse Y") * mouseSens;
         camPitch = Mathf.Clamp(camPitch, -maxPitch, maxPitch);
         Camera.main.transform.localRotation = Quaternion.Euler(camPitch, 0, 0);
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            ChangeFOV(60, zoom);
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            ChangeFOV(zoom, 60);
+        }
+    }
+
+    void ChangeFOV(float from, float to)
+    {
+        Camera.main.fieldOfView = Mathf.Lerp(from, to, zoomSpeed);
     }
 }
