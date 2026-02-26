@@ -20,14 +20,14 @@ public class MoveBetween : MonoBehaviour
     {
         if (!thing)
         {
-            transform.position = Vector3.MoveTowards(transform.position, point2.position, speed);
+            transform.position = Vector3.MoveTowards(transform.position, point2.position, speed * Time.deltaTime);
             if (Vector3.Distance(transform.position, point2.position) < 0.01)
             {
                 thing = !thing;
             }
         } else
         {
-            transform.position = Vector3.MoveTowards(transform.position, point1.position, speed);
+            transform.position = Vector3.MoveTowards(transform.position, point1.position, speed * Time.deltaTime);
             if (Vector3.Distance(transform.position, point1.position) < 0.01)
             {
                 thing = !thing;

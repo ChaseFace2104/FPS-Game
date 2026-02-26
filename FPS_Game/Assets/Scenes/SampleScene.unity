@@ -610,6 +610,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &784184627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 784184629}
+  - component: {fileID: 784184628}
+  - component: {fileID: 784184630}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &784184628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784184627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbb6a6edbdbcc70439b40fd154fe1a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scores: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  scoreFile: 
+--- !u!4 &784184629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784184627}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.17256165, y: -0.12385273, z: -2.0534859}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &784184630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784184627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d426589475c929c478f8c703c567078d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScores: {fileID: 0}
+  messageText: {fileID: 0}
+  timerText: {fileID: 0}
+  scoreText: {fileID: 0}
+  targets: []
+  player: {fileID: 0}
+  startTimerAmount: 0
+  targetActivateTimerAmount: 0
+  targetActivateTimer: 0
+  gameTimerAmount: 60
 --- !u!4 &882150518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 496044, guid: 2ddaf67cea161f34a932e666264b2a75, type: 3}
@@ -1740,7 +1809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2627236149860805863, guid: 6f32bdfb501602647b25b1bf1b0957b8, type: 3}
       propertyPath: zoomSpeed
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 7182381477990779039, guid: 6f32bdfb501602647b25b1bf1b0957b8, type: 3}
       propertyPath: m_Name
@@ -1890,6 +1959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  points: 1
   deathTime: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1902,3 +1972,4 @@ SceneRoots:
   - {fileID: 723799660738593133}
   - {fileID: 1942867766}
   - {fileID: 1756173883}
+  - {fileID: 784184629}

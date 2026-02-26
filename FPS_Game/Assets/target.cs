@@ -7,10 +7,16 @@ public class target : MonoBehaviour
     public int health;
     private int currentHealth;
 
+    public int points = 1;
+
     public int deathTime;
     private float currentTime = 0;
 
     private bool active;
+
+    private GameManager gameManager;
+
+    public GameManager GameManager { get { return gameManager; } set { gameManager = value; } }
 
     private void OnEnable()
     {
@@ -36,6 +42,10 @@ public class target : MonoBehaviour
 
     private void BreakTarget()
     {
+        if (gameManager != null)
+        {
+            gameManager.AddScore(points);
+        }
         gameObject.transform.GetComponent<MeshRenderer>().enabled = false;
         active = false;
     }
