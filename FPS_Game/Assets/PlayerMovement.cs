@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float grav;
     private float vertVelocity;
 
+    public Camera cam;
     public float mouseSens;
     public float maxPitch;
     public float zoom;
@@ -47,9 +48,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()
     {
-        Vector3 dir = (transform.forward * move.y + transform.right * move.x).normalized * speed * Time.fixedDeltaTime;
+        Vector3 dir = (transform.forward * move.y + transform.right * move.x).normalized * speed * Time.deltaTime;
 
-        dir += Vector3.up * vertVelocity * Time.fixedDeltaTime;
+        dir += Vector3.up * vertVelocity * Time.deltaTime;
 
         controller.Move(dir);
     }
@@ -102,6 +103,6 @@ public class PlayerMovement : MonoBehaviour
 
     void ChangeFOV(float from, float to)
     {
-        Camera.main.fieldOfView = Mathf.Lerp(from, to, zoomSpeed);
+        cam.fieldOfView = Mathf.Lerp(from, to, zoomSpeed);
     }
 }

@@ -46,8 +46,10 @@ public class target : MonoBehaviour
         {
             gameManager.AddScore(points);
         }
-        gameObject.transform.GetComponent<MeshRenderer>().enabled = false;
-        active = false;
+
+        //gameObject.transform.GetComponent<MeshRenderer>().enabled = false;
+        //active = false;
+        gameObject.SetActive(false);
     }
 
     public void Damage(int damage)
